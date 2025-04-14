@@ -27,6 +27,6 @@ contract Assignment8 is ERC721URIStorage, Ownable {
         _setTokenURI(tokenId, tokenURI);
 
         // increment token id counter
-        _tokenIdCounter += 1;
+        _tokenIdCounter++;
     }
 }
