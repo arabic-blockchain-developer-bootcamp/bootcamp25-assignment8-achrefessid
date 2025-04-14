@@ -18,7 +18,7 @@ contract Assignment8Test is Test {
 
         // Check ownership of the minted NFT
         address owner = assignment.ownerOf(0);
-        assertEq(owner, address(this), "Owner of token ID 0 should be the test contract");
+        assertEq(owner, address(this), "Owner of token ID 1 should be the test contract");
 
         string memory uri = assignment.tokenURI(0);
         assertEq(uri, temporaryUriForTesting, "Token URI does not match the expected value");        
@@ -33,6 +33,7 @@ contract Assignment8Test is Test {
         vm.expectRevert("Ownable: caller is not the owner");
         assignment.mintNFT(temporaryUriForTesting);
     }
+    
     function testMintMultipleNFTs() public {
         assignment.mintNFT(temporaryUriForTesting);
         assignment.mintNFT(temporaryUriForTesting);
